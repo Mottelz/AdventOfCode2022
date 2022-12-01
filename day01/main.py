@@ -1,13 +1,5 @@
 from typing import List
-
-
-def read_file_as_strings(filename):
-    with open(filename, 'r') as file:
-        out = []
-        for line in file:
-            temp = line.replace('\n', '')
-            out.append(temp)
-    return out
+from utils.readers import read_file_as_strings_without_newline as reader
 
 
 def convert_list_to_sums(raw: List[str]) -> List[int]:
@@ -32,7 +24,7 @@ def part_two(raw_data: List[str]) -> int:
 
 
 def main():
-    raw_data = read_file_as_strings('input.txt')
+    raw_data = reader('input.txt')
     print(f"Part 1: {part_one(raw_data)}")
     print(f"Part 2: {part_two(raw_data)}")
 
