@@ -6,7 +6,7 @@ def do_ranges_overlap_completely(r1: str, r2: str) -> bool:
     range1 = create_range(r1)
     range2 = create_range(r2)
     intersection = set(range2).intersection(range1)
-    return len(intersection) == len(range2) or len(intersection) == len(range1)
+    return len(intersection) == min(len(range2), len(range1))
 
 
 def do_ranges_overlap(r1: str, r2: str) -> bool:
