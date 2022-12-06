@@ -17,3 +17,11 @@ def read_file_and_split_lines(filename: str, divider: str) -> List[List[str]]:
             temp = line.replace('\n', '')
             out.append(temp.split(divider))
     return out
+
+
+def read_one_line(filename: str) -> str:
+    with open(filename, 'r') as file:
+        out = []
+        for line in file:
+            out.append(line.replace('\n', ''))
+    return out[0]
