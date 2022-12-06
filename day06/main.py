@@ -8,7 +8,7 @@ def contains_repeats(window: str) -> bool:
     return False
 
 
-def part1(datastream: str, window_size: int) -> int:
+def find_start_packet(datastream: str, window_size: int) -> int:
     for i in range(window_size, len(datastream)):
         window = datastream[i-window_size:i]
         if not contains_repeats(window):
@@ -17,8 +17,8 @@ def part1(datastream: str, window_size: int) -> int:
 
 def main():
     datastream = read_one_line('input.txt')
-    print(f"Part 1: {part1(datastream, 4)}")
-    print(f"Part 2: {part1(datastream, 14)}")
+    print(f"Part 1: {find_start_packet(datastream, 4)}")
+    print(f"Part 2: {find_start_packet(datastream, 14)}")
 
 
 if __name__ == "__main__":
