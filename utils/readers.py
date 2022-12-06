@@ -19,9 +19,9 @@ def read_file_and_split_lines(filename: str, divider: str) -> List[List[str]]:
     return out
 
 
-def read_one_line(filename: str) -> str:
+def read_one_line(filename: str, target_line: int = 0) -> str:
     with open(filename, 'r') as file:
         out = []
         for line in file:
             out.append(line.replace('\n', ''))
-    return out[0]
+    return out[target_line]
