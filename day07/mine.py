@@ -76,8 +76,8 @@ def main():
     raw = read_file_as_strings_without_newline('input.txt')
     filesystem = create_filesystem(raw)
     folder_values = get_folder_values(filesystem)
-    print(f"Part 1: {part1(folder_values, 100000)}")
-    print(f"Part 2: {part2(folder_values, 70000000, 30000000)}")
+    print(f"Part 1: {part1(folder_values, 100_000)}")
+    print(f"Part 2: {part2(folder_values, 70000000, 30_000_000)}")
 
 
 if __name__ == "__main__":
