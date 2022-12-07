@@ -78,7 +78,6 @@ def main():
     folder_values = get_folder_values(filesystem)
     print(f"Part 1: {part1(folder_values, 100000)}")
     print(f"Part 2: {part2(folder_values, 70000000, 30000000)}")
-    # print(filesystem)
 
 
 if __name__ == "__main__":
