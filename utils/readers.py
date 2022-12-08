@@ -25,3 +25,11 @@ def read_one_line(filename: str, target_line: int = 0) -> str:
         for line in file:
             out.append(line.replace('\n', ''))
     return out[target_line]
+
+
+def read_grid(filename: str) -> List[List[int]]:
+    with open(filename, 'r') as file:
+        out = []
+        for line in file:
+            out.append(list(map(int, line.strip())))
+        return out
