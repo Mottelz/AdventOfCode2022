@@ -27,8 +27,7 @@ def part2(state: List[List[str]], instructions: List[str]) -> str:
         count, start, end = parse_instruction(line)
         to_move = state[start][:count]
         state[start] = state[start][count:]
-        to_move.extend(state[end])
-        state[end] = to_move
+        state[end] = to_move + state[end]
     return get_tops(state)
 
 
