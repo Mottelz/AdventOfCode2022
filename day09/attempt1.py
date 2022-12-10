@@ -49,7 +49,8 @@ def part1(instructions):
     return len(visited)
 
 
-# THIS DOES NOT WORK FOR REASONS KNOWN ONLY TO GOD AND THE PYTHON INTERPRETER
+# THIS DOES NOT WORK
+# Because the problem was supposed to account for knots that were diagonal last iteration
 def part2(instructions):
     ends = [[0, 0] for _ in range(10)]
     visited = set([pos_to_str(ends[-1])])
@@ -64,7 +65,7 @@ def part2(instructions):
 
 
 def main():
-    instructions = read_file_and_split_lines('input.txt', ' ')
+    instructions = read_file_and_split_lines('test2.txt', ' ')
     print(f"Part 1: {part1(instructions)}")
     print(f"Part 2: {part2(instructions)}")
 
