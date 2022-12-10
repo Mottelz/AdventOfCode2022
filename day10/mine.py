@@ -13,9 +13,9 @@ def draw_pixel(clock, cursor):
     if curr == 0 and clock > 0:
         print('')
     if curr in [cursor-1, cursor, cursor+1]:
-        print('#', end='')
+        print('*', end='')
     else:
-        print('.', end='')
+        print(' ', end='')
 
 
 def part1(instructions, first, increment):
