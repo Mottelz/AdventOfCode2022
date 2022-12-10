@@ -33,7 +33,7 @@ def part2(state: List[List[str]], instructions: List[str]) -> str:
 
 def main():
     start_state = read_file_and_split_lines('input-start.txt', ',')
-    instruction_set = read_file_as_strings_without_newline('input-instructions.txt')
+    instruction_set = read_file_as_strings('input-instructions.txt')
     print(f"Part 1: {part1(start_state, instruction_set)}")
     start_state = read_file_and_split_lines('input-start.txt', ',')
     print(f"Part 2: {part2(start_state, instruction_set)}")

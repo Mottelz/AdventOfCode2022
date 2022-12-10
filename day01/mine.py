@@ -1,5 +1,5 @@
 from typing import List
-from utils.readers import read_file_as_strings_without_newline as reader
+from utils.readers import read_file_as_strings as reader
 
 
 def convert_list_to_sums(raw: List[str]) -> List[int]:

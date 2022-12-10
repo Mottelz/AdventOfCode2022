@@ -1,4 +1,4 @@
-from utils.readers import read_file_as_strings_without_newline
+from utils.readers import read_file_as_strings
 from typing import List
 
 o_key = {'A': 'r', 'B': 'p', 'C': 's'}
@@ -53,7 +53,7 @@ def parse_input(raw: List[str]) -> List[List[str]]:
 
 
 def main():
-    raw_data = read_file_as_strings_without_newline('input.txt')
+    raw_data = read_file_as_strings('input.txt')
     clean = parse_input(raw_data)
     print(f"Part 1: {part1(clean)}")
     print(f"Part 2: {part2(clean)}")

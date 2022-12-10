@@ -1,5 +1,5 @@
 import string
-from utils.readers import read_file_as_strings_without_newline
+from utils.readers import read_file_as_strings
 
 
 def get_value(letter):
@@ -33,7 +33,7 @@ def part2(data):
 
 
 def main():
-    data = read_file_as_strings_without_newline('input.txt')
+    data = read_file_as_strings('input.txt')
     print(f"Part 1: {part1(data)}")
     print(f"Part 2: {part2(data)}")
 

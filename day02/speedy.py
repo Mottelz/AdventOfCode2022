@@ -1,4 +1,4 @@
-from utils.readers import read_file_as_strings_without_newline
+from utils.readers import read_file_as_strings
 from typing import List
 
 
@@ -39,7 +39,7 @@ def part2(data: List[str]) -> int:
 
 
 def main():
-    raw_data = read_file_as_strings_without_newline('input.txt')
+    raw_data = read_file_as_strings('input.txt')
     print(f"Part 1: {part1(raw_data)}")
     print(f"Part 1: {part2(raw_data)}")
 

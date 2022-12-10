@@ -1,4 +1,4 @@
-from utils.readers import read_file_as_strings_without_newline
+from utils.readers import read_file_as_strings
 from collections import defaultdict
 
 
@@ -73,7 +73,7 @@ def part2(folder_values, disk_size, space_required):
 
 
 def main():
-    raw = read_file_as_strings_without_newline('input.txt')
+    raw = read_file_as_strings('input.txt')
     filesystem = create_filesystem(raw)
     folder_values = get_folder_values(filesystem)
     print(f"Part 1: {part1(folder_values, 100_000)}")

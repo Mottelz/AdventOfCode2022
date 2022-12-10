@@ -1,4 +1,4 @@
-from utils.readers import read_file_as_strings_without_newline
+from utils.readers import read_file_as_strings
 
 
 def sum_update(clock, first, increment, reg):
@@ -48,10 +48,11 @@ def part2(instructions):
 
 
 def main():
-    instructions = read_file_as_strings_without_newline('input.txt')
+    instructions = read_file_as_strings('input.txt')
     print(f"Part 1: {part1(instructions, 20, 40)}")
     print("=========Part 2==========")
     part2(instructions)
+
 
 if __name__ == "__main__":
     main()

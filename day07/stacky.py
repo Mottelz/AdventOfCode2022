@@ -1,5 +1,5 @@
 # This solution is a revised version of https://www.reddit.com/r/adventofcode/comments/zesk40/comment/izafyu9/
-from utils.readers import read_file_as_strings_without_newline
+from utils.readers import read_file_as_strings
 import itertools
 
 
@@ -29,7 +29,7 @@ def part2(sizes):
 
 
 def main():
-    commands = read_file_as_strings_without_newline('input.txt')
+    commands = read_file_as_strings('input.txt')
     sizes = get_sizes(commands)
     print(f"Part 1: {part1(sizes)}")
     print(f"Part 2: {part2(sizes)}")
