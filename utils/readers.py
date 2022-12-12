@@ -33,3 +33,16 @@ def read_grid(filename: str) -> List[List[int]]:
         for line in file:
             out.append(list(map(int, line.strip())))
         return out
+
+
+def read_blocks(filename: str) -> List[str]:
+    with open(filename, 'r') as file:
+        out = []
+        temp = ''
+        for line in file.readlines():
+            if line == '\n':
+                out.append(temp)
+                temp = ''
+            else:
+                temp += line
+    return out
