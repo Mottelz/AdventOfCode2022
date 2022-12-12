@@ -1,8 +1,24 @@
 from utils.readers import read_blocks
 from monkey import Monkey
+from math import gcd
+from functools import reduce
 
 
-def build_monkey(raw_input: str):
+def get_divisor(lines):
+    temp = []
+    for l in lines:
+        for line in l.split('\n'):
+            line = line.strip()
+            if 'Test: divisible by ' in line:
+                temp.append(eval(line[len('Test: divisible by '):]))
+    return lcm(temp)
+
+
+def lcm(denominators):
+    return reduce(lambda a, b: a * b // gcd(a, b), denominators)
+
+
+def build_monkey(raw_input: str, divisor):
     parsed = raw_input.split('\n')
     items = []
     test_val = 0
@@ -24,7 +40,7 @@ def build_monkey(raw_input: str):
             pass_target = eval(line[len('If true: throw to monkey '):])
         elif 'If false: throw to monkey ' in line:
             fail_target = eval(line[len('If false: throw to monkey '):])
-    return Monkey(test_val, worry_op, worry_val, fail_target, pass_target, items, True)
+    return Monkey(test_val, worry_op, worry_val, fail_target, pass_target, items, divisor)
 
 
 def part1(monkeys, rounds):
@@ -38,11 +54,12 @@ def part1(monkeys, rounds):
 
 
 def main():
-    raw = read_blocks('test.txt')
+    raw = read_blocks('input.txt')
     monkeys = []
+    divisor = get_divisor(raw)
     for line in raw:
-        monkeys.append(build_monkey(line))
-    print(f"Part 1: {part1(monkeys, 10000)}")
+        monkeys.append(build_monkey(line, divisor))
+    print(f"Part 2: {part1(monkeys, 10000)}")
 
 
 if __name__ == '__main__':

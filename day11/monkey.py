@@ -1,5 +1,5 @@
 class Monkey:
-    def __init__(self, test_val, worry_op, worry_val, fail_target, pass_target, items, part2=False):
+    def __init__(self, test_val, worry_op, worry_val, fail_target, pass_target, items, divisor=-1):
         self.items = items
         self.test_val = test_val
         self.worry_op = worry_op
@@ -7,7 +7,7 @@ class Monkey:
         self.pass_target = pass_target
         self.fail_target = fail_target
         self.items = items.copy()
-        self.calming = not part2
+        self.calmdown = divisor
         self.plays = 0
 
     def __len__(self):
@@ -32,8 +32,10 @@ class Monkey:
         self.plays += 1
         temp = self.items.pop(0)
         temp = eval(f"{temp} {self.worry_op} {self.worry_val}")
-        if self.calming:
+        if self.calmdown == -1:
             temp = temp // 3
+        else:
+            temp = temp % self.calmdown
         if temp % self.test_val == 0:
             target = self.pass_target
         else:
